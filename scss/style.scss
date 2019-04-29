@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css?family=Aleo:400,700|Josefin+Sans:400,700');
+@import '_normalize';
+@import '_reset';
+
+@mixin tr {
+	transition: all .3s ease-in;
+}
+@mixin my_pos ($top: 50%, $left: 50%, $tx: -50%, $ty: -50%) {
+	position: absolute;
+	top: $top;
+	left: $left;
+	transform: translate($tx, $ty);
+}
+$text-color: #e8e8e8;
+$btn-color: #5474fd;
+$hover: #333;
+// font-family: 'Aleo', serif;
+
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+	height: 100%;
+}
+
+body{
+	min-height: 100%;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 1.8rem;
+	line-height: 1.6;
+	color: #fff;
+	border: 15px solid #fff;
+	background-color: #333;
+}
+.block {
+	max-width: 540px;
+	width: 50%;
+}
+.btn {
+	background-color: $btn-color;
+	text-transform: uppercase;
+	color: $text-color;
+	font-family: 'Aleo', serif;
+	font-size: 1.6rem;
+	text-align: center;
+	margin-top: 50px;
+	width: 230px;
+	padding: 25px;
+	border: none;
+	@include tr;
+	cursor: pointer;
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: $text-color;
+		color: $btn-color;
+	}
+}
+.container {
+	max-width: 1110px;
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+.header {
+	width: 100%;
+	background-image: url(../img/header-bg.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 260px; 
+	max-height: 820px;
+	
+	&__title {
+		margin: 0;
+		padding: 0;
+		font-weight: bold;
+		font-size: 4.8rem;
+		text-transform: uppercase;
+		line-height: .8em;
+	}
+	&__subtitle {
+		margin: 0;
+		margin-top: 10px;
+		font-size: 2.2rem;
+		letter-spacing: .21em;
+		text-transform: capitalize;
+	}
+	&__form {
+		margin: 0 auto;
+		margin-top: 45px;
+		max-width: 650px;
+		display: flex;
+		padding: 2px;
+		background-color: #fff;
+	}	
+	&__input {
+			width: 75%;
+			border: none;
+			outline: none;
+			padding: 20px;
+			color: #999999;
+			@include tr;
+			&::placeholder {
+				text-indent: 0px;
+    			transition: text-indent 1000ms;
+				font-size: 1.4rem;
+				color: #999999;
+				text-align: center;
+				letter-spacing: .2em;
+				text-transform: capitalize;
+			}
+			&:focus::placeholder {
+					text-indent: 500px;
+			} 
+		}
+	&__button {
+			padding: 0;
+			padding-left: 25px;
+			margin: 0;
+			width: 25%;
+			background-color: $btn-color;
+			font-size: 1.4rem;
+			font-family: 'Aleo', serif;
+			color: $text-color;
+			text-transform: uppercase;
+			letter-spacing: .1em;
+			text-align: left;
+			position: relative;
+			cursor: pointer;
+			@include tr;
+			&:after {
+				content: '';
+				position: absolute;
+				background-image: url(../img/lup.png);
+				top: 30%;
+				right: 3%;
+				width: 30px;
+				height: 30px;
+				background-repeat: no-repeat;
+			}
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: #4662d8;
+			}	
+		}
+	&__text-link {
+		display: block;
+		margin-top: 120px;
+		font-size: 1.4rem;
+		letter-spacing: .15em;
+	}
+	&__link {
+		margin: 0 auto;
+		display: inline-block;
+		cursor: pointer;
+		@include tr;
+		&:hover {
+			transform:  scale(1.6);
+		}
+	}
+}
+.nav-wrapper {
+	background-color: $btn-color;
+	margin-top: 120px;
+}
+.nav {
+	height: 80px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;	
+	&__logo {
+		text-transform: uppercase;
+		cursor: pointer;
+		@include tr;
+		&:hover,
+		&:active,
+		&:focus {
+			color: $hover;
+		}	
+	}
+	&__block {
+		display: flex;
+		justify-content: space-between;
+		max-width: 70%;
+		width: 530px;
+	}
+	&__link {
+		text-transform: uppercase;
+		text-decoration: none;
+		cursor: pointer;
+		color: $text-color;
+		font-family: 'Aleo', serif;
+		font-size: 1.4rem;
+		@include tr;
+		&:hover,
+		&:active,
+		&:focus {
+			color: $hover;
+		}
+	}
+}
+.about {
+	background-image: url(../img/castle.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 190px 0 130px 0;
+	&--spain {
+		background-image: url(../img/house.jpg);
+		padding: 230px 0 100px 0;
+	}
+	&--spain-second {
+		background-image: url(../img/sunset.jpg);
+	}
+	&__wrapper {
+		display: flex;
+	}
+	&__title {
+		margin: 0;
+		padding: 0;
+		text-transform: capitalize;
+		font-family: 'Aleo', serif;
+		font-weight: 500;
+		font-size: 3.6rem;
+		&--dark {
+			font-size: 2rem;
+			font-weight: 500;
+			text-transform: uppercase;
+			font-family: 'Josefin Sans', sans-serif;
+		}
+	}
+	&__suptitle {
+		font-size: 2rem;
+		font-weight: 500;
+	}
+	&__text {
+		margin-top: 60px;
+		font-size: 1.6rem;
+		color: $text-color;
+		font-weight: 500;
+		&:last-of-type {
+			margin-top: 30px;
+		}
+	}
+	&__info {
+		text-align: left;
+		margin: 15px; 
+		&--dark {
+			background-color: rgba(35, 35, 35, .9);
+			padding: 50px 30px;
+		} 
+	}
+	&__photos {
+		position: relative;
+		margin: 15px;
+	}
+	&__photo {
+		max-width: 350px;
+		height: auto;
+		position: absolute;
+		&--top {
+			top: -100px;
+			left: 70px;
+		}
+		&--bottom {
+			top: 130px;
+			right: 0;
+		}
+	} 
+}
+.instruction {
+	text-align: center;
+	padding: 45px 0 120px 0;
+	font-size: 3.6rem;
+	font-family: 'Aleo', serif;
+	&__title {
+	}
+	&__items {
+		display: flex;
+		padding-top: 65px;
+		background: #333 url(../img/Shape.png);
+		background-position: 44% top;
+		background-repeat: no-repeat;
+		justify-content: space-between;
+		max-width: 1000px;
+		width: 90%;
+		margin: 0 auto;
+		// &:before {
+		// 	content: '';
+		// 	display: inline-block;
+		// 	background: url(../img/Shape.png);
+		// 	background-repeat: no-repeat;
+		// 	max-width: 100%;
+		// 	width: 75%;
+		// 	height: 100px;
+		// 	position: absolute;
+		// 	top: -60px;
+		// 	right: 140px;
+		// }
+		
+	}
+	// &__item {
+	// 	min-width: 216px;
+	// }
+	&__icon {
+		display: inline-block;
+		width: 90px;
+		height: 90px;
+		border-radius: 50%;
+	}
+
+}
+.feedback {
+	background-image: url(../img/man.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 120px 0 200px 0;
+	width: 100%;
+	&__title {
+		font-size: 3.6rem;
+		font-weight: 500;
+		font-family: 'Aleo', serif;
+		text-transform: capitalize;
+	}
+	&__main {
+		width: 100%;
+		display: flex;
+		margin-top: 95px;
+		background-color: #333;
+	}
+	&__img {
+		max-width: 455px;
+		max-height: 310px;
+	}
+	&__wrapper-text {
+		width: 65%;
+		padding: 45px 50px 45px 50px;
+		text-align: left;
+		color: $text-color;
+		position: relative;
+
+	}
+	&__subtitle {
+		font-size: 2rem;
+		text-transform: uppercase;
+		font-weight: 500;
+		@include tr;
+		cursor: pointer;
+		&:hover {
+			color: $btn-color;
+		}
+	}
+	&__text {
+		font-size: 1.6rem;
+		line-height: 1.6;
+		text-indent: 30px;
+		text-align: justify;
+		margin-top: 45px;
+		max-height: 145px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	&__quote {
+		display: block;
+		position: absolute;
+		top: 100px;
+		left: 45px;
+		font-size: 2.2rem;
+		color: $btn-color;
+	}
+
+}
+footer {
+	background-color: #232323;
+	padding: 120px 0 50px 0;
+}
+.footer {
+	margin: 0 auto;
+	text-align: center;
+	max-width: 160px;
+	&__title {
+		text-transform: uppercase;
+		font-size: 2.4rem;
+		font-weight: bold;
+		letter-spacing: 1.4px;
+		@include tr;
+		color: #fff;
+		text-decoration: none;
+		&:hover {
+			opacity: .6;
+		}
+	}
+	&__subtitle {
+		text-transform: capitalize;
+		font-size: 1.6rem;
+		font-weight: 500;
+		margin-top: 14px;
+	}
+	&__icons {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 25px;		
+	}
+	&__icon {		
+		@include tr;
+		font-size: 1.6rem;
+		color: #fff;
+		&:hover {
+			color: $btn-color;
+		}
+	}	
+}
+
+
+
