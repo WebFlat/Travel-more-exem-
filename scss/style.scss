@@ -67,13 +67,14 @@ body{
 	text-align: center;
 }
 .header {
+	height: 100vh;
 	width: 100%;
 	background-image: url(../img/header-bg.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	padding-top: 260px; 
-	max-height: 820px;
+	// max-height: 820px;
 	&__title {
 		margin: 0;
 		padding: 0;
@@ -150,8 +151,8 @@ body{
 		}
 	&__text-link {
 		display: block;
-		margin-top: 120px;
-		font-size: 1.4rem;
+		margin-top: 320px;
+		font-size: 1.6rem;
 		letter-spacing: .15em;
 	}
 	&__link {
@@ -165,6 +166,9 @@ body{
 	}
 }
 .nav-wrapper {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
 	background-color: $btn-color;
 	margin-top: 120px;
 }
@@ -284,7 +288,7 @@ body{
 		display: flex;
 		padding-top: 65px;
 		background: #333 url(../img/Shape.png);
-		background-position: 44% top;
+		background-position: 45% 5%;
 		background-repeat: no-repeat;
 		justify-content: space-between;
 		max-width: 1000px;
