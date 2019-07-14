@@ -228,6 +228,9 @@ body{
 	}
 	&__wrapper {
 		display: flex;
+		&--bottom {
+			flex-direction: row-reverse;
+			}
 	}
 	&__title {
 		margin: 0;
@@ -370,14 +373,13 @@ body{
 	}
 
 }
-footer {
+.footer {
 	background-color: #232323;
 	padding: 120px 0 50px 0;
-}
-.footer {
 	margin: 0 auto;
 	text-align: center;
-	max-width: 160px;
+	display: flex;
+	flex-direction: column;
 	&__title {
 		text-transform: uppercase;
 		font-size: 2.4rem;
@@ -399,7 +401,10 @@ footer {
 	&__icons {
 		display: flex;
 		justify-content: space-between;
-		margin-top: 25px;		
+		margin: 0 auto;	
+		margin-top: 25px;
+		width: 180px;
+				
 	}
 	&__icon {		
 		@include tr;
